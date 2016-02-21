@@ -1,11 +1,15 @@
 sudo: false
-sudo: false
 language: php
 php:
-  - 5.4
-
+- 5.4
 install:
-  - composer install --dev
-
+- composer install --dev
 script:
-  - vendor/bin/box build
+- vendor/bin/box build
+deploy:
+  provider: releases
+  api_key:
+    secure: T6c+ucbtlSqY1tJnGohTUAOQbvTMTnGMmxJ57UNQX4TPiIn344yHsx296nAOfkw4fKaCsrzyIIrF1TgtfI0KXizzj13OU2i5u+TEtShfm2uevkANYAPL2orY6A80R3g1fXSTgySy0f62HHreGoCvqQKPnkH0xOM9BFZiHg6cWaJiQ8Dy61tHXak0gkpU9/zf1YQEY+C4NjBknzn0DsbROQRMoFN25rC6SwzBD8YnAzKeFdL/YeN7nDR55FCK+U+Yb0GKOxZuyWaqHMyHq4J3jFiw+CINeEd4nJ9inV9HWpEox38VTpJ1g6fTuOdC20K/fyoIaXq88nfkCAoOTiwKj7DzWiJfOEN9bbTomxgIhtxN2bhC5nAQYWI+zrhe8P9JrRC3h5cBeioUOL+GQF7soMxsZ14kw9bdkvSmSAhNmOc0FcRgNGSzIleTdmujCdy3Nq6ZbhyiF9dXKqfrcA9ESb4jyd10bhSKKeMzU/aHJRaL/cW7TC/PhvB/AbJ1lfAiXwpySHDfYd+EuCxVLT9s4HMxbuJN0q/k58NRNfSSBLCoM1e48ZS3Z6Qplds1TMgrT//h1UK9w9v7lrqaDvQeKKRZHzk7yIkSz+FBqzedhPCOiDx8aY5+QYTxp35Uvn+lVM0sZ/aPo1zGzzWBhz50nZaZiQBEIOs7itTF2dIZ3G8=
+  file: cla.phar
+  on:
+    repo: DeepDiver1975/ownCloudCLA
