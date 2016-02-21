@@ -1,0 +1,7 @@
+{
+  "directories": ["src", "vendor"],
+  "chmod": "0755",
+  "main": "src/main.php",
+  "output": "cla.phar",
+  "stub": true
+}
