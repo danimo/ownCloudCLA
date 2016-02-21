@@ -80,6 +80,10 @@ class CLA extends Command
 			$output->writeln("Pull request #$pr is already merged.");
 			return 0;
 		}
+		if ($pullRequest->getState() !== 'closed') {
+			$output->writeln("Pull request #$pr has been closed.");
+			return 0;
+		}
 
 		$output->writeln("Getting commits for pull request #$pr ...");
 		$commits = $client->pulls->listCommitsOnPullRequest($owner, $repo, $pr);
