@@ -50,6 +50,9 @@ class CLA extends Command
 
 	protected function execute(InputInterface $input, OutputInterface $output) {
 		$pr = $input->getArgument('pr');
+		if (substr($pr, 0, 10) === 'origin/pr/') {
+			$pr = substr($pr, 10);
+		}
 		$owner = 'owncloud';
 		$repo = 'core';
 		$authFile = $input->getArgument('auth-file');
