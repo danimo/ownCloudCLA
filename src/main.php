@@ -76,6 +76,7 @@ class CLA extends Command
 		$output->writeln("$codeTeamId");
 
 		$pullRequest = $client->pulls->getSinglePullRequest($owner, $repo, $pr);
+		$output->writeln("Analysing pull request #$pr " . $pullRequest->getHtmlUrl());
 		if ($pullRequest->getMerged()) {
 			$output->writeln("Pull request #$pr is already merged.");
 			return 0;
