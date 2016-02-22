@@ -37,6 +37,11 @@ class CLA extends Command
 			->setName('cla')
 			->setDescription('check if a user has signed the CLA')
 			->addArgument(
+				'repo',
+				InputArgument::REQUIRED,
+				'the repository to watch'
+			)
+			->addArgument(
 				'pr',
 				InputArgument::REQUIRED,
 				'pull request number'
@@ -54,7 +59,7 @@ class CLA extends Command
 			$pr = substr($pr, 10);
 		}
 		$owner = 'owncloud';
-		$repo = 'core';
+		$repo = $input->getArgument('repo');
 		$authFile = $input->getArgument('auth-file');
 
 		if (!file_exists($authFile)) {
